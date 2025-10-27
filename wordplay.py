@@ -78,13 +78,20 @@ def flatten(nested: list[list]) -> list:
 
 
 def nested_sum(nested: list[list[int]]) -> int:
-    "Adds all integers in a set of nested lists"
-    return 0
+    """Adds all integers in a set of nested lists"""
+    flattened_list = flatten(nested)
+    list_sum = sum(flattened_list)
+    return list_sum
 
 
 def cumulative_sum(numbers: list[int]) -> list[int]:
-    "Creates the cumulative sum for a sequence of integers"
-    return [0] * len(numbers)
+    """Creates the cumulative sum for a sequence of integers"""
+    list_sum = []
+    sum_accumulator = 0
+    for number in numbers:
+        sum_accumulator += number
+        list_sum.append(sum_accumulator)
+    return list_sum
 
 
 def middle(seq: list) -> list:
